@@ -8,6 +8,7 @@ pip install awscli --upgrade --user
 export PATH=~/.local/bin:$PATH
 source ~/.bash_profile
 cd ~
-KEY=aws s3 ls s3://puspa --recursive |sort | tail -n 1 | awk '{print $4}'
+KEY=`aws s3 ls s3://puspa --recursive |sort | tail -n 1 | awk '{print $4}'`
 aws s3 cp s3://puspa/$KEY .
 java -jar $KEY
+~
